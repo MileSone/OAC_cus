@@ -1,0 +1,451 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+</head>
+
+<script src="http://www.w2bc.com/scripts/2bc/_gg_980_90.js" type="text/javascript"></script>
+
+
+<script>
+
+    $(document).ready(function () {
+        var $toggleButton = $('.toggle-button'),
+            $menuWrap = $('.menu-wrap'),
+            $sidebarArrow = $('.sidebar-menu-arrow'),
+            $bodyAction = $('.PageTable'),
+            $navAction = $('.menu-bar-navigation'),
+            $menuAction = $('.menu');
+
+        // Hamburger button
+
+        $toggleButton.on('click', function (e) {
+            $(this).toggleClass('button-open');
+            $menuWrap.toggleClass('menu-show');
+            e.stopPropagation();
+        });
+
+
+        $bodyAction.on('touchstart', function (e) {
+            $toggleButton.removeClass('button-open');
+            $menuWrap.removeClass('menu-show');
+        });
+
+        $navAction.on('click', function (e) {
+            e.stopPropagation();
+        });
+
+        $navAction.on('touchstart', function (e) {
+            e.stopPropagation();
+        });
+
+        $menuAction.on('click', function (e) {
+            e.stopPropagation();
+        });
+
+        $menuAction.on('touchstart', function (e) {
+            e.stopPropagation();
+        });
+
+        $bodyAction.on('click', function (e) {
+            $toggleButton.removeClass('button-open');
+            $menuWrap.removeClass('menu-show');
+        });
+
+
+        // Sidebar navigation arrows
+
+        $sidebarArrow.click(function (e) {
+            $(this).next().slideToggle(300);
+            e.stopPropagation();
+        });
+    });
+
+</script>
+
+
+<header>
+    <div class="menu-bar-navigation">
+            <span class="toggle-button">
+            <div class="menu-bar menu-bar-top"></div>
+            <div class="menu-bar menu-bar-middle"></div>
+            <div class="menu-bar menu-bar-bottom"></div>
+        </span>
+
+        <span class="nav-title">校区数据</span>
+
+        <div class="menu-wrap">
+            <div class="menu-sidebar">
+                <ul class="menu">
+                    <li>
+                        <a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1IOS&page=HOME-AREA">首页</a>
+                    </li>
+                    <li>
+                        <a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1IOS&page=COST-AREA">成本数据</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <div class="sidebar-menu-arrow">
+                            <span>业绩数据</span>
+                            <span>
+                            <svg t="1591341644644" class="arraow_icon" cy="6" viewBox="0 0 1024 1024" version="1.1"
+                             xmlns="http://www.w3.org/2000/svg" p-id="1128" width="25" height="25">
+                                <path d="M948.560332 281.179984c-13.765515-13.833053-36.127825-13.833053-49.89334 0L511.991302 668.591431 125.313565 281.179984c-13.763468-13.798261-36.093033-13.798261-49.856501 0-13.799284 13.798261-13.799284 36.161594 0 49.993624l410.857439 411.674037c7.067976 7.085372 16.402575 10.521634 25.675776 10.331299 9.274224 0.191358 18.608823-3.245927 25.677822-10.331299l410.891208-411.708829c6.863315-6.89913 10.331299-15.940041 10.331299-24.979928S955.423647 288.078091 948.560332 281.179984z"
+                                p-id="1129" fill="#ffffff"></path>
+                            </svg>
+                            </span>
+                        </div>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1IOS&page=REVENUE-AREA">营收</a>
+                            </li>
+                            <li>
+                                <a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1IOS&page=SUBJECT-AREA">科目</a>
+                            </li>
+                            <li>
+                                <a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1IOS&page=PRODUCTION-AREA">产能</a>
+                            </li>
+                            <li>
+                                <a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1IOS&page=SAVELV-AREA">保留率</a>
+                            </li>
+                            <li>
+                                <a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1IOS&page=SERVICE-AREA">服务</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <div class="sidebar-menu-arrow">
+                            <span>校区数据</span>
+                            <span>
+                            <svg t="1591341644644" class="arraow_icon" cy="6" viewBox="0 0 1024 1024" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" p-id="1128" width="25" height="25">
+                                <path d="M948.560332 281.179984c-13.765515-13.833053-36.127825-13.833053-49.89334 0L511.991302 668.591431 125.313565 281.179984c-13.763468-13.798261-36.093033-13.798261-49.856501 0-13.799284 13.798261-13.799284 36.161594 0 49.993624l410.857439 411.674037c7.067976 7.085372 16.402575 10.521634 25.675776 10.331299 9.274224 0.191358 18.608823-3.245927 25.677822-10.331299l410.891208-411.708829c6.863315-6.89913 10.331299-15.940041 10.331299-24.979928S955.423647 288.078091 948.560332 281.179984z"
+                                      p-id="1129" fill="#ffffff"></path>
+                            </svg>
+                            </span>
+                        </div>
+                        <ul class="sub-menu">
+                            <!--<li><a href="#">员工</a></li>-->
+                            <li>
+                                <a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1IOS&page=TEACHER-AREA">教师</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</header>
+
+<div style="height: 50px">
+
+</div>
+
+<style type="text/css">
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Montserrat', Arial, serif;
+    }
+
+    header {
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+    }
+
+    ::selection {
+        background-color: #EBEBF2;
+        color: #83828D;
+    }
+
+    .arraow_icon {
+        position: relative;
+        top: 5px;
+    }
+
+    /* ==================================== */
+    /*		  	  Navigaton Menu
+    /* ==================================== */
+
+    .menu-wrap {
+        background-color: #1466b2;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        margin-left: -250px;
+        font-size: 1.5em;
+        font-weight: 400;
+        overflow: auto;
+        transition: .25s;
+        z-index: 10;
+    }
+
+    @media screen and (max-width: 600px) {
+        .menu-wrap {
+            width: 200px;
+            margin-left: -200px;
+        }
+    }
+
+    .menu-show {
+        margin-left: 0;
+        box-shadow: 1px 2px 6px 1px #1665b2;
+    }
+
+    .menu-sidebar {
+        margin: 25px 0 80px 10px;
+        position: relative;
+        top: 0px;
+        text-align: left;
+    }
+
+    .menu-sidebar li {
+        padding: 18px 22px 0;
+        font-size: 1.18em;
+    }
+
+    .menu-sidebar li > a {
+        color: #f3f3f3 !important;
+        position: relative;
+    }
+
+    .menu-sidebar .menu-item-has-children ul li > a {
+         font-size: 0.6em;
+    }
+
+    .menu-sidebar li > a::after {
+        content: "";
+        display: block;
+        height: 0.15em;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        /*background-image: linear-gradient(to right, transparent 50.3%, #ffffff 50.3%);*/
+        transition: background-position .2s .1s ease-out;
+        background-size: 200% auto;
+    }
+
+    .menu-sidebar li > a:hover::after {
+        background-position: -100% 0;
+    }
+
+    .menu-sidebar .menu-item-has-children {
+        position: relative;
+    }
+
+    .menu-sidebar .menu-item-has-children .sub-menu {
+        display: none;
+    }
+
+    .sidebar-menu-arrow {
+        vertical-align: middle;
+        color: #ffffff;
+        position: relative;
+    }
+
+    .sidebar-menu-arrow:hover::after {
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .sidebar-menu-arrow:active::after {
+        top: 2px;
+    }
+
+    .nav-title {
+        margin-top: 15px;
+        font-size: 1.5em;
+        /* margin: 0 auto; */
+        text-align: center;
+        color: #fff;
+        padding: 10px;
+        line-height: 60px;
+    }
+
+    /*Hamburger Button*/
+    .toggle-button {
+        position: fixed;
+        width: 44px;
+        height: 40px;
+        top: 18px;
+        left: 20px;
+        padding: 4px;
+        transition: .25s;
+        z-index: 15;
+    }
+
+    .toggle-button:hover {
+        cursor: pointer;
+    }
+
+    .toggle-button .menu-bar {
+        position: absolute;
+        border-radius: 2px;
+        width: 80%;
+        transition: .5s;
+    }
+
+    .toggle-button .menu-bar-top {
+        border: 3px solid #fff;
+        border-bottom: none;
+        top: 0;
+    }
+
+    .toggle-button .menu-bar-middle {
+        height: 3px;
+        background-color: #fff;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        top: 3px;
+    }
+
+    .toggle-button .menu-bar-bottom {
+        border: 3px solid #fff;
+        border-top: none;
+        top: 20px;
+    }
+
+    .button-open {
+        left: 25px;
+    }
+
+    .button-open .menu-bar-top {
+        border-color: #fff;
+        transform: rotate(45deg) translate(8px, 8px);
+        transition: .5s;
+    }
+
+    .button-open .menu-bar-middle {
+        background-color: #fff;
+        transform: translate(230px);
+        transition: .1s ease-in;
+        opacity: 0;
+    }
+
+    .button-open .menu-bar-bottom {
+        border-color: #fff;
+        transform: rotate(-45deg) translate(6px, -6px);
+        transition: .5s;
+    }
+
+    .menu-bar-navigation {
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #1466b2;
+        height: 60px;
+        text-align: center;
+    }
+
+    /* Text Block */
+    .wrapper {
+        width: 40%;
+        margin: 100px auto 0;
+        color: #83828D;
+    }
+
+    .wrapper .text {
+        padding: 30px;
+    }
+
+    .wrapper .text .heading {
+        margin-bottom: 40px;
+        font-size: 2em;
+    }
+
+    .wrapper .text p {
+        line-height: 1.6em;
+    }
+
+    .wrapper .text .buttons {
+        margin-top: 40px;
+    }
+
+    /* Buttons */
+    .wrapper .buttons .button {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 20px 25px;
+        border-radius: 2em;
+        background-color: #70CE64;
+        color: #fff;
+        font-size: .9em;
+        font-weight: 700;
+        transition: background-color .3s;
+    }
+
+    .wrapper .buttons .button-secondary {
+        background-color: #FF6746;
+    }
+
+    .wrapper .buttons .button-primary:hover {
+        background-color: #84D07A;
+    }
+
+    .wrapper .buttons .button-secondary:hover {
+        background-color: #FF7D60;
+    }
+
+    /*Active state for the buttons*/
+    .wrapper .buttons .button-primary:active {
+        background-color: #70CE64;
+    }
+
+    .wrapper .buttons .button-secondary:active {
+        background-color: #FF6746;
+    }
+
+    /*Icons*/
+    .wrapper .buttons .button span {
+        position: relative;
+        display: inline-block;
+        padding-right: 20px;
+    }
+
+    .wrapper .buttons .button span::after {
+        position: absolute;
+        font-family: "FontAwesome";
+        right: -3px;
+        font-size: 14px;
+        top: 0;
+        transition: top .3s, right .3s;
+    }
+
+    .wrapper .buttons .button-primary span::after {
+        content: "\f019";
+    }
+
+    .wrapper .buttons .button-secondary span::after {
+        content: "\f178";
+    }
+
+    /*Slight icons animation*/
+    .wrapper .buttons .button-primary:hover span::after {
+        top: 4px;
+    }
+
+    .wrapper .buttons .button-secondary:hover span::after {
+        right: -6px;
+    }
+</style>
+
+
+

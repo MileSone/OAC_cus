@@ -1,0 +1,105 @@
+<!--<div id="last-refresh"></div>-->
+
+
+<script type="text/javascript">
+    // Get report IDs into an array
+    function initRefresh(){
+        if (typeof vReportIds !== 'undefined'){
+            for (key in vReportIds){
+                if (key != 'undefined' && key != null){
+                    vObjectIds.push(vReportIds[key]);
+                }
+            }
+        }
+        else{
+            vObjectIds = [];
+        }
+    }
+
+    // Start timer if refreshTimerObject is null
+    function startRefreshTimer(){
+        if (refreshTimerObject === null || typeof refreshTimerObject === 'undefined'){
+            refreshTimerObject = setInterval(function () {timerTick()}, 1000);
+            vCountdown = vRefreshDuration;
+        }
+    }
+
+    // Stop timer if refreshTimerObject is not null
+    function stopRefreshTimer(){
+        if (refreshTimerObject !== null && typeof refreshTimerObject !== 'undefined'){
+            clearTimeout(refreshTimerObject);
+            refreshTimerObject = null;
+        }
+    }
+
+    // Loop known report IDs and send them to the OBIEE refresh function
+    function timerTick(){
+        if (vCountdown === 1){
+            refreshReports();
+            vCountdown = vRefreshDuration;
+            // updateLastRefreshed();
+        }
+        else{
+            vCountdown = vCountdown - 1;
+        }
+
+    }
+
+    // Update display countdown
+    function refreshReports(){
+        for (key in vObjectIds){
+            HereLink(vObjectIds[key], 'Refresh');
+        }
+    }
+
+    // Update last refresh time on Dashboard
+    function updateLastRefreshed(){
+        // document.getElementById("last-refresh").innerHTML = vMessageLastRefreshed + formatDate(new Date());
+    }
+
+    function formatDate(dt) {
+        var dd = dt.getDate();
+        var m = dt.getMonth() + 1;
+        var yyyy = dt.getFullYear();
+        var hh = dt.getHours();
+        var mm = dt.getMinutes();
+        var ss = dt.getSeconds();
+        return padZero(dd, 2) + '-' + padZero(m, 2) + '-' + yyyy + ' ' + padZero(hh, 2) + ':' + padZero(mm, 2) + ':' + padZero(ss, 2) ;
+    }
+
+    function padZero(v, l){
+        var r = v;
+        if (v.toString().length < l){
+            for(a = v.toString().length; a < l; a++){
+                r = '0' + v;
+            }
+        }
+        return r;
+    }
+
+    var vRefreshDuration = 5;
+    var vMessageLastRefreshed = '<strong>最近更新:</strong> <br />';
+
+    var vObjectIds = [];
+    var refreshTimerObject = null;
+    var vCountdown = 0;
+    var vLastSpanClick = 'On';
+
+
+    initRefresh();
+
+    function refreshingLoop(lt){
+        setTimeout(
+            function () {
+                refreshReports();
+                console.log("refreshing....")
+                refreshingLoop(lt);
+            }
+        ,lt * 1000)
+    }
+
+    refreshingLoop(60)
+
+    //秒数
+
+</script>

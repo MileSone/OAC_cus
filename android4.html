@@ -1,0 +1,400 @@
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
+
+
+<script>
+
+    $(document).ready(function () {
+        var $toggleButton = $('.toggle-button'),
+            $menuWrap = $('.menu-wrap'),
+            $sidebarArrow = $('.sidebar-menu-arrow'),
+            $bodyAction = $('.PageTable'),
+            $navAction = $('.menu-bar-navigation'),
+            $menuAction = $('.menu');
+
+        // Hamburger button
+
+        $toggleButton.on('click', function (e) {
+            $(this).toggleClass('button-open');
+            $menuWrap.toggleClass('menu-show');
+            e.stopPropagation();
+        });
+
+
+        $bodyAction.on('touchstart', function (e) {
+            $toggleButton.removeClass('button-open');
+            $menuWrap.removeClass('menu-show');
+        });
+
+        $navAction.on('click', function (e) {
+            e.stopPropagation();
+        });
+
+        $navAction.on('touchstart', function (e) {
+            e.stopPropagation();
+        });
+
+        $menuAction.on('click', function (e) {
+            e.stopPropagation();
+        });
+
+        $menuAction.on('touchstart', function (e) {
+            e.stopPropagation();
+        });
+
+        $bodyAction.on('click', function (e) {
+            $toggleButton.removeClass('button-open');
+            $menuWrap.removeClass('menu-show');
+        });
+
+
+        // Sidebar navigation arrows
+
+        $sidebarArrow.click(function (e) {
+            $(this).next().slideToggle(300);
+            e.stopPropagation();
+        });
+    });
+
+</script>
+
+
+<header>
+    <div class="menu-bar-navigation">
+            <span class="toggle-button">
+            <div class="menu-bar menu-bar-top"></div>
+            <div class="menu-bar menu-bar-middle"></div>
+            <div class="menu-bar menu-bar-bottom"></div>
+        </span>
+
+        <span class="nav-title">教师</span>
+
+        <div class="menu-wrap">
+            <div class="menu-sidebar">
+                <ul class="menu">
+                    <li><a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1andriod&page=SUBJECT1">科目</a></li>
+                    <li><a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1andriod&page=AZ-SAVELV_CAMPUS1">保留率</a></li>
+                    <li><a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1andriod&page=AZ-SERVICE-CAMPUS1">服务</a></li>
+                    <li><a href="https://skloac-cnztntcoyzif-ic.analytics.ocp.oraclecloud.com/ui/analytics/saw.dll?Dashboard&PortalPath=%2Fshared%2FCRMAPP%2F_portal%2Fmobile1andriod&page=AZ-TEA-CAMPUS1">教师</a></li>
+                </ul>
+            </div>
+        </div>
+</header>
+
+<style type="text/css">
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Montserrat', Arial, serif;
+    }
+
+    header {
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+    }
+
+    ::selection {
+        background-color: #EBEBF2;
+        color: #83828D;
+    }
+
+    .arraow_icon {
+        position: relative;
+        top: 3px;
+    }
+
+
+    /* ==================================== */
+    /*		  	  Navigaton Menu
+    /* ==================================== */
+
+    .menu-wrap {
+        background-color: #1466b2;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: 100%;
+        width: 350px;
+        margin-left: -350px;
+        font-size: 40px;
+        font-weight: 400;
+        overflow: auto;
+        transition: .25s;
+        z-index: 10;
+    }
+
+    @media screen and (max-width: 600px) {
+        .menu-wrap {
+            width: 200px;
+            margin-left: -200px;
+        }
+    }
+
+    .menu-show {
+        margin-left: 0;
+        box-shadow: 1px 2px 6px 1px #1665b2;
+    }
+
+    .menu-sidebar {
+        margin: 60px 0 80px 10px;
+        position: relative;
+        top: 0px;
+        text-align: left;
+    }
+
+    .menu-sidebar li {
+        padding: 18px 42px 0;
+        font-size: 45px;
+    }
+
+    .menu-sidebar li > a {
+        color: #f3f3f3 !important;
+        position: relative;
+    }
+
+    .menu-sidebar .menu-item-has-children ul li > a {
+        font-size: 40px;
+    }
+
+    .menu-sidebar li > a::after {
+        content: "";
+        display: block;
+        height: 0.15em;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        /*background-image: linear-gradient(to right, transparent 50.3%, #ffffff 50.3%);*/
+        transition: background-position .2s .1s ease-out;
+        background-size: 200% auto;
+    }
+
+    .menu-sidebar li > a:hover::after {
+        background-position: -100% 0;
+    }
+
+    .sub-menu li{
+        padding-left: 40px;
+    }
+
+    .menu-sidebar .menu-item-has-children {
+        position: relative;
+    }
+
+    .menu-sidebar .menu-item-has-children .sub-menu {
+        display: none;
+    }
+
+    .sidebar-menu-arrow {
+        vertical-align: middle;
+        color: #ffffff;
+        position: relative;
+    }
+
+    .sidebar-menu-arrow:hover::after {
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .sidebar-menu-arrow:active::after {
+        top: 2px;
+    }
+
+    .nav-title {
+        margin-top: 15px;
+        font-size: 40px;
+        text-align: center;
+        font-weight: 400;
+        color: #fff;
+        padding: 10px;
+        line-height: 100px;
+    }
+
+    /*Hamburger Button*/
+    .toggle-button {
+        position: fixed;
+        width: 44px;
+        height: 40px;
+        top: 40px;
+        left: 30px;
+        transition: .25s;
+        z-index: 15;
+    }
+
+    .toggle-button:hover {
+        cursor: pointer;
+    }
+
+    .toggle-button .menu-bar {
+        position: absolute;
+        border-radius: 2px;
+        width: 80%;
+        transition: .5s;
+    }
+
+    .toggle-button .menu-bar-top {
+        border: 3px solid #fff;
+        border-bottom: none;
+        top: 0;
+    }
+
+    .toggle-button .menu-bar-middle {
+        height: 3px;
+        background-color: #fff;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        top: 3px;
+    }
+
+    .toggle-button .menu-bar-bottom {
+        border: 3px solid #fff;
+        border-top: none;
+        top: 20px;
+    }
+
+    .button-open {
+        left: 25px;
+    }
+
+    .button-open .menu-bar-top {
+        border-color: #fff;
+        transform: rotate(45deg) translate(8px, 8px);
+        transition: .5s;
+    }
+
+    .button-open .menu-bar-middle {
+        background-color: #fff;
+        transform: translate(230px);
+        transition: .1s ease-in;
+        opacity: 0;
+    }
+
+    .button-open .menu-bar-bottom {
+        border-color: #fff;
+        transform: rotate(-45deg) translate(6px, -6px);
+        transition: .5s;
+    }
+
+    .menu-bar-navigation {
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #1466b2;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    /* Text Block */
+    .wrapper {
+        width: 40%;
+        margin: 100px auto 0;
+        color: #83828D;
+    }
+
+    .wrapper .text {
+        padding: 30px;
+    }
+
+    .wrapper .text .heading {
+        margin-bottom: 40px;
+        font-size: 2em;
+    }
+
+    .wrapper .text p {
+        line-height: 1.6em;
+    }
+
+    .wrapper .text .buttons {
+        margin-top: 40px;
+    }
+
+    /* Buttons */
+    .wrapper .buttons .button {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 20px 25px;
+        border-radius: 2em;
+        background-color: #70CE64;
+        color: #fff;
+        font-size: .9em;
+        font-weight: 700;
+        transition: background-color .3s;
+    }
+
+    .wrapper .buttons .button-secondary {
+        background-color: #FF6746;
+    }
+
+    .wrapper .buttons .button-primary:hover {
+        background-color: #84D07A;
+    }
+
+    .wrapper .buttons .button-secondary:hover {
+        background-color: #FF7D60;
+    }
+
+    /*Active state for the buttons*/
+    .wrapper .buttons .button-primary:active {
+        background-color: #70CE64;
+    }
+
+    .wrapper .buttons .button-secondary:active {
+        background-color: #FF6746;
+    }
+
+    /*Icons*/
+    .wrapper .buttons .button span {
+        position: relative;
+        display: inline-block;
+        padding-right: 20px;
+    }
+
+    .wrapper .buttons .button span::after {
+        position: absolute;
+        font-family: "FontAwesome";
+        right: -3px;
+        font-size: 14px;
+        top: 0;
+        transition: top .3s, right .3s;
+    }
+
+    .wrapper .buttons .button-primary span::after {
+        content: "\f019";
+    }
+
+    .wrapper .buttons .button-secondary span::after {
+        content: "\f178";
+    }
+
+    /*Slight icons animation*/
+    .wrapper .buttons .button-primary:hover span::after {
+        top: 4px;
+    }
+
+    .wrapper .buttons .button-secondary:hover span::after {
+        right: -6px;
+    }
+</style>
+
+
+
+
+
